@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: aigraphcodescan
-Version: 1.1.5
+Version: 1.1.6
 Summary: A tool for security review of code using graph-based analysis
 Home-page: https://github.com/tcosolutions/aigraphcodescan
 Author: Marcin Kozlowski
