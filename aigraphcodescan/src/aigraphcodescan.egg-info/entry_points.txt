@@ -1,0 +1,2 @@
+[console_scripts]
+aigraphcodescan = aigraphcodescan.__main__:main
