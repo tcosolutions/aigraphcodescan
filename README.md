@@ -1,3 +1,5 @@
+
+
 # AIGraphCodeScan
 
 **AIGraphCodeScan** is a tool designed for performing security reviews of codebases using graph analysis. The package utilizes Neo4j and Fast GraphRAG to query and visualize relationships within the code, helping identify potential security risks and vulnerabilities by analyzing the structure and flow of the code.
