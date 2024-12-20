@@ -41,7 +41,59 @@ aigraphcodescan --debug
 
 Export env variablea for OpenAI (api key) and Neo4j settings (see code)
 
+# Setting Environment Variables for Configuration
 
+Follow the steps below to configure the environment variables required for your application, including the OpenAI API key and Neo4j connection details.
+
+---
+
+## For Windows
+1. **Open Environment Variables Settings:**
+   - Right-click on "This PC" or "My Computer."
+   - Select **Properties** > **Advanced System Settings** > **Environment Variables**.
+
+2. **Add New Environment Variables:**
+   - Under "User variables" or "System variables," click **New** and add the following variables:
+
+     | **Variable Name**       | **Value**                     |
+     |-------------------------|-------------------------------|
+     | `OPENAI_API_KEY`        | Your OpenAI API key           |
+     | `NEO4J_URI`             | `bolt://localhost:7687`       |
+     | `NEO4J_USER`            | `neo4j`                      |
+     | `NEO4J_PASSWORD`        | `password`                   |
+     | `DIRECTORY_PATH`        | `../badcode/`                |
+
+3. **Save and Apply:**
+   - Click **OK** to save each variable.
+   - Restart any terminal or application that requires these variables.
+
+---
+
+## For macOS/Linux
+1. **Edit the Shell Configuration File:**
+   - Open a terminal and edit your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
+     ```bash
+     nano ~/.bashrc  # Replace with the appropriate file
+     ```
+
+2. **Add Environment Variables:**
+   - Append the following lines to the file:
+     ```bash
+     export OPENAI_API_KEY="your_openai_api_key"
+     export NEO4J_URI="bolt://localhost:7687"
+     export NEO4J_USER="neo4j"
+     export NEO4J_PASSWORD="password"
+     export DIRECTORY_PATH="../badcode/"
+     ```
+
+3. **Apply the Changes:**
+   - Save the file and reload it:
+     ```bash
+     source ~/.bashrc
+     ```
+   - Use `~/.zshrc` or `~/.bash_profile` if applicable.
+
+---
 
 The command will start the graph-based security review process. The `--debug` option enables more detailed logging output.
 
