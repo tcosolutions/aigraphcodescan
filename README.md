@@ -39,6 +39,10 @@ Once installed, you can use the `aigraphcodescan` command to run the security re
 aigraphcodescan --debug
 ```
 
+Export env variablea for OpenAI (api key) and Neo4j settings (see code)
+
+
+
 The command will start the graph-based security review process. The `--debug` option enables more detailed logging output.
 
 ## Example Workflow
