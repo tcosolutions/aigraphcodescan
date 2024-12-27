@@ -46,30 +46,6 @@ Export env variablea for OpenAI (api key) and Neo4j settings (see code)
 
 Follow the steps below to configure the environment variables required for your application, including the OpenAI API key and Neo4j connection details.
 
----
-
-## For Windows
-1. **Open Environment Variables Settings:**
-   - Right-click on "This PC" or "My Computer."
-   - Select **Properties** > **Advanced System Settings** > **Environment Variables**.
-
-2. **Add New Environment Variables:**
-   - Under "User variables" or "System variables," click **New** and add the following variables:
-
-     | **Variable Name**       | **Value**                     |
-     |-------------------------|-------------------------------|
-     | `OPENAI_API_KEY`        | Your OpenAI API key           |
-     | `NEO4J_URI`             | `bolt://localhost:7687`       |
-     | `NEO4J_USER`            | `neo4j`                      |
-     | `NEO4J_PASSWORD`        | `password`                   |
-     | `DIRECTORY_PATH`        | `../badcode/`                |
-
-3. **Save and Apply:**
-   - Click **OK** to save each variable.
-   - Restart any terminal or application that requires these variables.
-
----
-
 ## For macOS/Linux
 1. **Edit the Shell Configuration File:**
    - Open a terminal and edit your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
