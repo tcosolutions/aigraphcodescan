@@ -1,0 +1,52 @@
+name: Auto Tag on Commit
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Git
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Step 3: Get the latest tag
+      - name: Get latest tag
+        id: get_latest_tag
+        run: |
+          git fetch --tags
+          latest=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "latest_tag=$latest" >> $GITHUB_ENV
+
+      # Step 4: Calculate the new version
+      - name: Calculate new tag
+        id: calculate_tag
+        run: |
+          if [ -z "${{ env.latest_tag }}" ]; then
+            echo "new_tag=0.1.0" >> $GITHUB_ENV
+          else
+            IFS='.' read -r -a parts <<< "${{ env.latest_tag }}"
+            major=${parts[0]}
+            minor=${parts[1]}
+            patch=${parts[2]}
+            new_patch=$((patch + 1))
+            echo "new_tag=$major.$minor.$new_patch" >> $GITHUB_ENV
+          fi
+        env:
+          latest_tag: ${{ env.latest_tag }}
+
+      # Step 5: Create and push the new tag
+      - name: Create and push tag
+        run: |
+          git tag ${{ env.new_tag }}
+          git push origin ${{ env.new_tag }}
