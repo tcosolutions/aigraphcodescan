@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       # Step 1: Check out the repository
