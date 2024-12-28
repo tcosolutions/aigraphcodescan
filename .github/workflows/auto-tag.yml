@@ -3,7 +3,7 @@ name: Auto Tag on Commit
 on:
   push:
     branches:
-      - master # Replace with your default branch if different
+      - main # Replace with your default branch if different
 
 jobs:
   auto-tag:
