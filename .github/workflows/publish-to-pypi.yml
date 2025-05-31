@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main  # Replace with your default branch if different
-      
+
+permissions:
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
