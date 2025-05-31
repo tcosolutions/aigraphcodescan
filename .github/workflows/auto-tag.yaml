@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Replace with your default branch if different
 
+permissions:
+  contents: write
+
 jobs:
   auto-tag:
     runs-on: ubuntu-latest
