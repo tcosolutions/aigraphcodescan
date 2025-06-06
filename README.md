@@ -39,8 +39,13 @@ Once installed, you can use the `aigraphcodescan` command to run the security re
 aigraphcodescan --debug
 ```
 
-Export env variablea for OpenAI (api key) and Neo4j settings (see code)
+Export env variable for OpenAI (api key) and Neo4j settings (see code)
 
+```
+export NEO4J_URI = "bolt://localhost:7687")
+export NEO4J_USER = "neo4j"
+export NEO4J_PASSWORD = "password"
+```
 
 The command will start the graph-based security review process. The `--debug` option enables more detailed logging output.
 
